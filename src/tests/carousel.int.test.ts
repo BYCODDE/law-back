@@ -1,5 +1,3 @@
-jest.setTimeout(15000) // ✅ Increase Jest timeout to 15 seconds
-
 import request from 'supertest'
 import app from '../server'
 import mongoose from 'mongoose'
@@ -49,13 +47,13 @@ describe('Carousel API', () => {
     })
 
     expect(res.status).toBe(200)
-   expect(res.body.title).toBe('test1')
+    expect(res.body.title).toBe('test1')
   })
 
   it('should delete carousel item', async () => {
     const res = await request(app).delete(`/api/carousel/${id}`).set('Cookie', `token=${token}`)
 
     expect(res.status).toBe(200)
-    expect(res.body.message).toBe('Carousel deleted successfully') 
+    expect(res.body.message).toBe('Carousel deleted successfully')
   })
 })
