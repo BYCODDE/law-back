@@ -50,6 +50,6 @@ describe('Banner API', () => {
   it('should delete banner item', async () => {
 const res = await request(app).delete(`/api/banner/${id}`).set('Cookie', `token=${token}`)
     expect(res.status).toBe(200)
-    expect(res.body.message).toBe('Banner item deleted  successfully ')
+    expect(res.body.message).toBe('Banner  deleted  successfully ')
   })
 })

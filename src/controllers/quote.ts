@@ -32,18 +32,17 @@ export const updateQuote = async (req: Request, res: Response) => {
     console.error('UPDATE ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
-  
 }
 
 export const deleteQuote = async (req: Request, res: Response) => {
   try {
     const deletedQuote = await Quote.findByIdAndDelete(req.params.id)
     if (!deletedQuote) {
-      res.status(400).json({ message: 'Quote item not found' })
+      res.status(400).json({ message: 'Quote  not found' })
       return
     }
     res.status(200).json({
-      message: 'Quote items deleted successfully',
+      message: 'Quote  deleted successfully',
       removedQuote: deletedQuote,
     })
   } catch (error) {

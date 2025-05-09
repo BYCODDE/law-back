@@ -38,11 +38,11 @@ export const deleteBanner = async (req: Request, res: Response) => {
   try {
     const deletedBanner = await Banner.findByIdAndDelete(req.params.id)
     if (!deletedBanner) {
-      res.status(400).json({ message: 'Banner item not found' })
+      res.status(400).json({ message: 'Banner  not found' })
       return
     }
     res.status(200).json({
-      message: 'Banner item deleted  successfully ',
+      message: 'Banner  deleted  successfully ',
       deletedBanner: deletedBanner,
     })
   } catch (error) {

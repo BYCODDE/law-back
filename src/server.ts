@@ -5,6 +5,7 @@ import authRoutes from './routes/auth'
 import carouselRoutes from './routes/carousel'
 import bannerRoutes from './routes/banner'
 import quoteRoutes from './routes/quote'
+import latestNewsRoutes from './routes/latestNews'
 
 const app = express()
 
@@ -20,5 +21,7 @@ app.use('/api/carousel', carouselRoutes)
 app.use('/api/banner', bannerRoutes)
 
 app.use('/api/quotes', quoteRoutes)
+
+app.use('/api/latestnews', latestNewsRoutes)
 
 export default app

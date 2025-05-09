@@ -27,7 +27,7 @@ describe('Quote API ', () => {
       position: 'CEO',
     })
 
-    console.log('Created Quote ID:', res.body._id) // ✅ LOG THE ID HERE
+
 
     expect(res.status).toBe(201)
     id = res.body._id
@@ -40,7 +40,6 @@ describe('Quote API ', () => {
   })
 
   it('should update a quote item ', async () => {
-    console.log('Update Quote ID:', id) // Should NOT be undefined
 
     const res = await request(app).put(`/api/quotes/${id}`).set('Cookie', `token=${token}`).send({
       title: 'test2',
@@ -56,6 +55,6 @@ describe('Quote API ', () => {
   it('should delete a quote item ', async () => {
     const res = await request(app).delete(`/api/quotes/${id}`).set('Cookie', `token=${token}`)
     expect(res.status).toBe(200)
-    expect(res.body.message).toBe('Quote items deleted successfully')
+    expect(res.body.message).toBe('Quote  deleted successfully')
   })
 })
