@@ -39,7 +39,7 @@ describe('Auth API', () => {
   it('should not log in with invalid credentials', async () => {
     const res = await request(app).post('/api/auth/login').send({
       email: testEmail,
-      password: "wrongPassword",
+      password: 'wrongPassword',
     })
     expect(res.status).toBe(401)
     expect(res.body.message).toBe('Invalid credentials')
