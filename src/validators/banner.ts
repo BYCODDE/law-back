@@ -6,3 +6,5 @@ export const bannerSchema = z.object({
   link: z.string().url(),
   revenue: z.string().optional(),
 })
+
+export const updateBannerSchema = bannerSchema.partial()

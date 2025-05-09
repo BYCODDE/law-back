@@ -26,7 +26,7 @@ export const updateBanner = async (req: Request, res: Response) => {
 
     res.status(200).json({
       message: 'Banner item updated successfully',
-      updatedItems,
+      banner: updatedItems,
     })
   } catch (error) {
     console.error('UPDATE ERROR:', error)
@@ -36,14 +36,14 @@ export const updateBanner = async (req: Request, res: Response) => {
 
 export const deleteBanner = async (req: Request, res: Response) => {
   try {
-    const deletedItems = await Banner.findByIdAndDelete(req.params.id)
-    if (!deletedItems) {
+    const deletedBanner = await Banner.findByIdAndDelete(req.params.id)
+    if (!deletedBanner) {
       res.status(400).json({ message: 'Banner item not found' })
       return
     }
     res.status(200).json({
       message: 'Banner item deleted  successfully ',
-      deletedItems,
+      deletedBanner: deletedBanner,
     })
   } catch (error) {
     console.error('DELETE ERROR:', error)

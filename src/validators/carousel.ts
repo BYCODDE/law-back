@@ -7,3 +7,5 @@ export const carouselSchema = z.object({
   link1: z.string().url().optional(),
   link2: z.string().url().optional(),
 })
+
+export const updateCarouselSchema = carouselSchema.partial()
