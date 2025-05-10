@@ -2,8 +2,13 @@ import { Request, Response } from 'express'
 import LatestNews from '../models/LatestNews'
 
 export const getAllNews = async (req: Request, res: Response) => {
-  const news = await LatestNews.find().sort({ createdAt: -1 }).limit(3)
-  res.status(200).json(news)
+  try {
+    const news = await LatestNews.find().sort({ createdAt: -1 }).limit(3)
+    res.status(200).json(news)
+  } catch (error) {
+    console.error('CREATE ERROR:', error)
+    res.status(500).json({ message: 'Internal server error' })
+  }
 }
 
 export const createLatestNews = async (req: Request, res: Response) => {

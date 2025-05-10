@@ -2,8 +2,13 @@ import { Request, Response } from 'express'
 import Quote from '../models/Quote'
 
 export const getAllQuotes = async (req: Request, res: Response) => {
-  const quotes = await Quote.find().sort({ createdAt: -1 }).limit(5)
-  res.status(200).json(quotes)
+  try {
+    const quotes = await Quote.find().sort({ createdAt: -1 }).limit(5)
+    res.status(200).json(quotes)
+  } catch (error) {
+    console.error('CREATE ERROR:', error)
+    res.status(500).json({ message: 'Internal server error' })
+  }
 }
 
 export const createQuote = async (req: Request, res: Response) => {

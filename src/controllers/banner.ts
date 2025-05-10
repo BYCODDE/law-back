@@ -2,8 +2,13 @@ import { Request, Response } from 'express'
 import Banner from '../models/Banner'
 
 export const getAllBanner = async (req: Request, res: Response) => {
-  const items = await Banner.find().sort({ createdAt: -1 }).limit(2)
-  res.status(200).json(items)
+  try {
+    const items = await Banner.find().sort({ createdAt: -1 }).limit(2)
+    res.status(200).json(items)
+  } catch (error) {
+    console.error('CREATE ERROR:', error)
+    res.status(500).json({ message: 'Internal server error' })
+  }
 }
 
 export const createBanner = async (req: Request, res: Response) => {
