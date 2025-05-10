@@ -18,7 +18,12 @@ router.delete('/:id', requireAdmin, deleteQuote)
 
 export default router
 
-
+/**
+ * @swagger
+ * tags:
+ *   name: Quote
+ *   description: Quote management
+ */
 
 /**
  * @swagger
@@ -46,15 +51,23 @@ export default router
  *           schema:
  *             type: object
  *             required:
- *               - text
- *               - author
+ *               - title
+ *               - rating
+ *               - name
+ *               - position
  *             properties:
- *               text:
+ *               title:
  *                 type: string
- *                 example: "Discipline is the bridge between goals and accomplishment."
- *               author:
+ *                 example: "An exceptional service"
+ *               rating:
  *                 type: string
- *                 example: "Jim Rohn"
+ *                 example: "5"
+ *               name:
+ *                 type: string
+ *                 example: "John Doe"
+ *               position:
+ *                 type: string
+ *                 example: "Marketing Manager"
  *     responses:
  *       201:
  *         description: Quote created
@@ -85,12 +98,18 @@ export default router
  *           schema:
  *             type: object
  *             properties:
- *               text:
+ *               title:
  *                 type: string
- *                 example: "Success is not final, failure is not fatal."
- *               author:
+ *                 example: "Updated title"
+ *               rating:
  *                 type: string
- *                 example: "Winston Churchill"
+ *                 example: "4"
+ *               name:
+ *                 type: string
+ *                 example: "Jane Smith"
+ *               position:
+ *                 type: string
+ *                 example: "CEO"
  *     responses:
  *       200:
  *         description: Quote updated
@@ -124,4 +143,3 @@ export default router
  *       404:
  *         description: Quote not found
  */
-

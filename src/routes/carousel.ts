@@ -22,6 +22,12 @@ router.put('/:id', requireAdmin, validate(updateCarouselSchema), updateCarousel)
 router.delete('/:id', requireAdmin, deleteCarousel)
 
 export default router
+/**
+ * @swagger
+ * tags:
+ *   name: Carousel
+ *   description: Carousel management
+ */
 
 /**
  * @swagger
@@ -50,20 +56,24 @@ export default router
  *             type: object
  *             required:
  *               - title
- *               - imageUrl
+ *               - image
+ *               - subtitle
  *             properties:
  *               title:
  *                 type: string
  *                 example: "Summer Sale"
- *               imageUrl:
+ *               image:
  *                 type: string
  *                 example: "https://example.com/image.jpg"
- *               link:
+ *               subtitle:
  *                 type: string
- *                 example: "https://example.com"
- *               order:
- *                 type: integer
- *                 example: 1
+ *                 example: "Up to 50% off"
+ *               link1:
+ *                 type: string
+ *                 example: "https://example.com/shop"
+ *               link2:
+ *                 type: string
+ *                 example: "https://example.com/info"
  *     responses:
  *       201:
  *         description: Carousel item created
@@ -97,15 +107,18 @@ export default router
  *               title:
  *                 type: string
  *                 example: "Winter Sale"
- *               imageUrl:
+ *               image:
  *                 type: string
  *                 example: "https://example.com/image2.jpg"
- *               link:
+ *               subtitle:
+ *                 type: string
+ *                 example: "New Season Deals"
+ *               link1:
  *                 type: string
  *                 example: "https://example.com/winter"
- *               order:
- *                 type: integer
- *                 example: 2
+ *               link2:
+ *                 type: string
+ *                 example: "https://example.com/faq"
  *     responses:
  *       200:
  *         description: Carousel item updated

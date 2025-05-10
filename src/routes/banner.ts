@@ -18,6 +18,12 @@ router.delete('/:id', requireAdmin, deleteBanner)
 export default router
 
 
+/**
+ * @swagger
+ * tags:
+ *   name: Banner
+ *   description: Banner management
+ */
 
 /**
  * @swagger
@@ -46,20 +52,21 @@ export default router
  *             type: object
  *             required:
  *               - title
- *               - imageUrl
+ *               - image
+ *               - link
  *             properties:
  *               title:
  *                 type: string
  *                 example: "Black Friday Sale"
- *               imageUrl:
+ *               image:
  *                 type: string
  *                 example: "https://example.com/banner.jpg"
  *               link:
  *                 type: string
  *                 example: "https://example.com"
- *               position:
+ *               revenue:
  *                 type: string
- *                 example: "top"
+ *                 example: "$5000"
  *     responses:
  *       201:
  *         description: Banner item created
@@ -93,15 +100,15 @@ export default router
  *               title:
  *                 type: string
  *                 example: "Updated Banner Title"
- *               imageUrl:
+ *               image:
  *                 type: string
  *                 example: "https://example.com/banner2.jpg"
  *               link:
  *                 type: string
  *                 example: "https://example.com/new"
- *               position:
+ *               revenue:
  *                 type: string
- *                 example: "bottom"
+ *                 example: "$7000"
  *     responses:
  *       200:
  *         description: Banner item updated

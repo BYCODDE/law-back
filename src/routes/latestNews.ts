@@ -28,7 +28,12 @@ export default router
 
 
 
-
+/**
+ * @swagger
+ * tags:
+ *   name: LatestNews
+ *   description: Latest news entries
+ */
 
 /**
  * @swagger
@@ -56,21 +61,30 @@ export default router
  *           schema:
  *             type: object
  *             required:
+ *               - date
  *               - title
- *               - content
+ *               - image
+ *               - subtitle
+ *               - link
  *             properties:
+ *               date:
+ *                 type: string
+ *                 example: "2025-05-01"
  *               title:
  *                 type: string
- *                 example: "New Training Program Launched"
- *               content:
+ *                 example: "Grand Opening Event"
+ *               image:
  *                 type: string
- *                 example: "We are excited to announce a new Krav Maga training course starting next month..."
- *               imageUrl:
+ *                 example: "https://example.com/image.jpg"
+ *               subtitle:
  *                 type: string
- *                 example: "https://example.com/news-image.jpg"
+ *                 example: "Join us for an exciting launch"
+ *               link:
+ *                 type: string
+ *                 example: "https://example.com/news-details"
  *     responses:
  *       201:
- *         description: News created
+ *         description: News entry created
  *       400:
  *         description: Validation error
  *       401:
@@ -98,15 +112,21 @@ export default router
  *           schema:
  *             type: object
  *             properties:
+ *               date:
+ *                 type: string
+ *                 example: "2025-05-02"
  *               title:
  *                 type: string
- *                 example: "Updated News Title"
- *               content:
- *                 type: string
- *                 example: "Updated content of the news article..."
- *               imageUrl:
+ *                 example: "Updated Event Title"
+ *               image:
  *                 type: string
  *                 example: "https://example.com/updated-image.jpg"
+ *               subtitle:
+ *                 type: string
+ *                 example: "Updated subtitle"
+ *               link:
+ *                 type: string
+ *                 example: "https://example.com/updated-link"
  *     responses:
  *       200:
  *         description: News updated
@@ -134,7 +154,7 @@ export default router
  *           type: string
  *     responses:
  *       200:
- *         description: News deleted
+ *         description: News entry deleted
  *       401:
  *         description: Unauthorized
  *       404:
