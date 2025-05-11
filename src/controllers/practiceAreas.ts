@@ -6,7 +6,7 @@ export const getallAreas = async (req: Request, res: Response) => {
     const areas = await PracticeAreas.find().sort({ createdAt: -1 }).limit(4)
     res.status(200).json(areas)
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('GET ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }
@@ -37,7 +37,7 @@ export const updateAreas = async (req: Request, res: Response) => {
       updatedArea: updatedAreas,
     })
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('UPDATE ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }
@@ -55,7 +55,7 @@ export const deleteAreas = async (req: Request, res: Response) => {
       deletedArea: deleteArea,
     })
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('DELETE ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }

@@ -8,6 +8,7 @@ import quoteRoutes from './routes/quote'
 import latestNewsRoutes from './routes/latestNews'
 import practiceAreaRoutes from './routes/practiceAreas'
 import contactRoutes from './routes/contact'
+import teamRoutes from './routes/team'
 
 const app = express()
 
@@ -25,8 +26,11 @@ app.use('/api/banner', bannerRoutes)
 app.use('/api/quotes', quoteRoutes)
 
 app.use('/api/latestnews', latestNewsRoutes)
+
 app.use('/api/practiceareas', practiceAreaRoutes)
 
 app.use('/api/contact', contactRoutes)
+
+app.use('/api/team', teamRoutes)
 
 export default app

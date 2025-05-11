@@ -6,7 +6,7 @@ export const getAllNews = async (req: Request, res: Response) => {
     const news = await LatestNews.find().sort({ createdAt: -1 }).limit(3)
     res.status(200).json(news)
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('GET ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }
@@ -34,7 +34,7 @@ export const updateLatestNews = async (req: Request, res: Response) => {
       updatedNews: updatedNews,
     })
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('UPDATE ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }
@@ -49,7 +49,7 @@ export const deleteLatestNews = async (req: Request, res: Response) => {
       removedNews: deletedNews,
     })
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('DELETE ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }

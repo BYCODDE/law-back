@@ -30,7 +30,7 @@ export const getAllContacts = async (req: Request, res: Response) => {
       data: messages,
     })
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('GET ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }

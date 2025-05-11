@@ -6,7 +6,7 @@ export const getAllQuotes = async (req: Request, res: Response) => {
     const quotes = await Quote.find().sort({ createdAt: -1 }).limit(5)
     res.status(200).json(quotes)
   } catch (error) {
-    console.error('CREATE ERROR:', error)
+    console.error('GET ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }
@@ -51,7 +51,7 @@ export const deleteQuote = async (req: Request, res: Response) => {
       removedQuote: deletedQuote,
     })
   } catch (error) {
-    console.error('UPDATE ERROR:', error)
+    console.error('DELETE ERROR:', error)
     res.status(500).json({ message: 'Internal server error' })
   }
 }
