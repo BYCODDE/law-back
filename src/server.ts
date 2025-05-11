@@ -9,7 +9,7 @@ import latestNewsRoutes from './routes/latestNews'
 import practiceAreaRoutes from './routes/practiceAreas'
 import contactRoutes from './routes/contact'
 import teamRoutes from './routes/team'
-
+import faqRoutes from './routes/faq'
 const app = express()
 
 app.use(cors())
@@ -32,5 +32,7 @@ app.use('/api/practiceareas', practiceAreaRoutes)
 app.use('/api/contact', contactRoutes)
 
 app.use('/api/team', teamRoutes)
+
+app.use('/api/faq', faqRoutes)
 
 export default app
