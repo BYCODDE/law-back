@@ -7,6 +7,8 @@ import bannerRoutes from './routes/banner'
 import quoteRoutes from './routes/quote'
 import latestNewsRoutes from './routes/latestNews'
 import practiceAreaRoutes from './routes/practiceAreas'
+import contactRoutes from './routes/contact'
+
 const app = express()
 
 app.use(cors())
@@ -24,5 +26,7 @@ app.use('/api/quotes', quoteRoutes)
 
 app.use('/api/latestnews', latestNewsRoutes)
 app.use('/api/practiceareas', practiceAreaRoutes)
+
+app.use('/api/contact', contactRoutes)
 
 export default app
