@@ -12,6 +12,7 @@ import teamRoutes from './routes/team'
 import faqRoutes from './routes/faq'
 import businessRoutes from './routes/business'
 import addressRoutes from './routes/address'
+import blogRoutes from './routes/blog'
 const app = express()
 
 app.use(cors())
@@ -40,5 +41,7 @@ app.use('/api/faq', faqRoutes)
 app.use('/api/business', businessRoutes)
 
 app.use('/api/address', addressRoutes)
+
+app.use('/api/blog', blogRoutes)
 
 export default app
