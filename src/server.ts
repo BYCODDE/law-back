@@ -13,6 +13,7 @@ import faqRoutes from './routes/faq'
 import businessRoutes from './routes/business'
 import addressRoutes from './routes/address'
 import blogRoutes from './routes/blog'
+import commentRoutes from './routes/comments'
 const app = express()
 
 app.use(cors())
@@ -44,4 +45,5 @@ app.use('/api/address', addressRoutes)
 
 app.use('/api/blog', blogRoutes)
 
+app.use('/api/comments', commentRoutes)
 export default app
